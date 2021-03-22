@@ -16,13 +16,18 @@ TEST(Pestreev_Daniil_ComplexNumberTest, Sequence_of_actions) {
     ASSERT_EQ(c.getIm(), 7136);
 }
 
-TEST(Pestreev_Daniil_ComplexNumberTest, Modulo_comparison) {
-    double m = 1001.0;
-    ComplexNumber c1(m, m);
-    ComplexNumber c2(m + 1.0, m + 1.0);
-    double mod1 = sqrt(c1.getRe() * c1.getRe() + c1.getIm() * c1.getIm());
-    double mod2 = sqrt(c2.getRe() * c2.getRe() + c2.getIm() * c2.getIm());
-    ASSERT_TRUE(mod1 < mod2);
+TEST(Pestreev_Daniil_ComplexNumberTest, Conjugate_property) {
+    double c1 = 23.0;
+    double c2 = 43.0;
+    double r1 = c1;
+    double r2 = -c2;
+
+    ComplexNumber com1(c1, c2);
+    ComplexNumber com2(r1, r2);
+    ComplexNumber a = (com1 * com1 * com1 * com1 * com1);
+    ComplexNumber b = (com2 * com2 * com2 * com2 * com2);
+    ASSERT_DOUBLE_EQ(a.getRe(), b.getRe());
+    ASSERT_DOUBLE_EQ((-1) * (a.getIm()), b.getIm());
 }
 
 TEST(Pestreev_Daniil_ComplexNumberTest, Exponentiation_i) {
