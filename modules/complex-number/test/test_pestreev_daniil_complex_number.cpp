@@ -1,9 +1,7 @@
 // Copyright 2021 Pestreev Daniil
 
 #include <gtest/gtest.h>
-#include <cmath>
 
-#include <limits>
 #include "include/complex_number.h"
 
 TEST(Pestreev_Daniil_ComplexNumberTest, Sequence_of_actions) {
@@ -26,8 +24,12 @@ TEST(Pestreev_Daniil_ComplexNumberTest, Conjugate_property) {
     ComplexNumber com2(r1, r2);
     ComplexNumber a = (com1 * com1 * com1 * com1 * com1);
     ComplexNumber b = (com2 * com2 * com2 * com2 * com2);
-    ASSERT_DOUBLE_EQ(a.getRe(), b.getRe());
-    ASSERT_DOUBLE_EQ((-1) * (a.getIm()), b.getIm());
+    double re = 174630628.0;
+    ASSERT_DOUBLE_EQ(a.getRe(), re);
+    ASSERT_DOUBLE_EQ(b.getRe(), re);
+    double im = 213417772.0;
+    ASSERT_DOUBLE_EQ((-1) * a.getIm(), im);
+    ASSERT_DOUBLE_EQ(b.getIm(), im);
 }
 
 TEST(Pestreev_Daniil_ComplexNumberTest, Exponentiation_i) {
