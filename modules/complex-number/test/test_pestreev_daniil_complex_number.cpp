@@ -33,9 +33,9 @@ TEST(Pestreev_Daniil_ComplexNumberTest, Conjugate_property) {
 TEST(Pestreev_Daniil_ComplexNumberTest, Exponentiation_i) {
     ComplexNumber c1(0, 1);
     ComplexNumber c1_ext2 = c1 * c1;
-    ASSERT_EQ(-1, c1_ext2.getRe());
-    ASSERT_EQ(0, c1_ext2.getIm());
+    ASSERT_EQ(c1_ext2.getRe(), -1);
+    ASSERT_EQ(c1_ext2.getIm(), 0);
     ComplexNumber c1_ext5 = c1_ext2 * c1_ext2 * c1;
-    ASSERT_EQ(0, c1_ext5.getRe());
-    ASSERT_EQ(1, c1_ext5.getIm());
+    ASSERT_EQ(c1_ext5.getRe(), 0);
+    ASSERT_EQ(c1_ext5.getIm(), 1);
 }
