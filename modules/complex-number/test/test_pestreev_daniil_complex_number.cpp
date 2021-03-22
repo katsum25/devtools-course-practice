@@ -1,23 +1,28 @@
 // Copyright 2021 Pestreev Daniil
 
 #include <gtest/gtest.h>
+#include <cmath>
 
+#include <limits>
 #include "include/complex_number.h"
 
-TEST(Pestreev_Daniil_ComplexNumberTest, Div_by_Zero) {
-    double re = 0.0;
-    double im = 0.0;
-
-    ComplexNumber c(re, im);
-    ASSERT_ANY_THROW(c / c);
+TEST(Pestreev_Daniil_ComplexNumberTest, Sequence_of_actions) {
+    ComplexNumber c1(2, 2);
+    ComplexNumber c2(-2, 2);
+    ComplexNumber c3(2, 63);
+    ComplexNumber c4(0, 10);
+    ComplexNumber c = c1 + c2 * c3 * (c4 - c3);
+    ASSERT_EQ(c.getRe(), -6204);
+    ASSERT_EQ(c.getIm(), 7136);
 }
 
-TEST(Pestreev_Daniil_ComplexNumberTest, Exponentiation_of_two) {
-    ComplexNumber c1(3, 3);
-    ComplexNumber c2(3, 3);
-    ComplexNumber mult = c1 * c2;
-    ComplexNumber res(0, 18);
-    ASSERT_TRUE(mult == res);
+TEST(Pestreev_Daniil_ComplexNumberTest, Modulo_comparison) {
+    double m = 1001.0;
+    ComplexNumber c1(m, m);
+    ComplexNumber c2(m + 1.0, m + 1.0);
+    double mod1 = sqrt(c1.getRe() * c1.getRe() + c1.getIm() * c1.getIm());
+    double mod2 = sqrt(c2.getRe() * c2.getRe() + c2.getIm() * c2.getIm());
+    ASSERT_TRUE(mod1 < mod2);
 }
 
 TEST(Pestreev_Daniil_ComplexNumberTest, Exponentiation_i) {
