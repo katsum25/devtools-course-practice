@@ -26,12 +26,6 @@ TEST(Pestreev_connectivity_components, graph_with_one_vertex) {
             if (i == j) g2.element(i, j) = 0;
         }
     }
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            std::cout << g2.element(i, j) << " ";
-        }
-        std::cout << std::endl;
-    }
     int res = g2.countConectComps();
     ASSERT_EQ(1, res);
 }
@@ -73,12 +67,6 @@ TEST(Pestreev_connectivity_components, complete_simple_graph) {
             if (i == j) g2.element(i, j) = 0;
         }
     }
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            std::cout << g2.element(i, j) << " ";
-        }
-        std::cout << std::endl;
-    }
     int res = g2.countConectComps();
     ASSERT_EQ(1, res);
 }
@@ -93,12 +81,6 @@ TEST(Pestreev_connectivity_components, empty_graph) {
             if (i == j) g2.element(i, j) = 0;
         }
     }
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            std::cout << g2.element(i, j) << " ";
-        }
-        std::cout << std::endl;
-    }
     int res = g2.countConectComps();
     ASSERT_EQ(10, res);
 }
@@ -112,12 +94,6 @@ TEST(Pestreev_connectivity_components, multi_graph) {
             g2.element(j, i) = g2.element(i, j);
             if (i == j) g2.element(i, j) = 0;
         }
-    }
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            std::cout << g2.element(i, j) << " ";
-        }
-        std::cout << std::endl;
     }
     int res = g2.countConectComps();
     ASSERT_EQ(2, res);
@@ -140,12 +116,6 @@ TEST(Pestreev_connectivity_components, some_simple_graph) {
             g2.element(i, j) = matrix[i][j];
         }
     }
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            std::cout << g2.element(i, j) << " ";
-        }
-        std::cout << std::endl;
-    }
     int res = g2.countConectComps();
     ASSERT_EQ(3, res);
 }
@@ -167,12 +137,6 @@ TEST(Pestreev_connectivity_components, some_multi_graph) {
         for (int j = 0; j < N; j++) {
             g2.element(i, j) = matrix[i][j];
         }
-    }
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            std::cout << g2.element(i, j) << " ";
-        }
-        std::cout << std::endl;
     }
     int res = g2.countConectComps();
     ASSERT_EQ(2, res);

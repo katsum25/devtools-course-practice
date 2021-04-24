@@ -3,7 +3,7 @@
 #include "include/connectivity_components.h"
 
 Graph::Graph(int i): n(i) {
-    matrix = new int * [n];
+    matrix = new int*[n];
     for (int g = 0; g < n; g++)
         matrix[g] = new int[n];
     used = new char[n];
