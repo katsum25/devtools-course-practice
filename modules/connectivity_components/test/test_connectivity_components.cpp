@@ -6,12 +6,14 @@
 
 #include "include/connectivity_components.h"
 
-TEST(Pestreev_connectivity_components, constructor_1) {
-    ASSERT_NO_THROW(Graph g2());
+TEST(Pestreev_connectivity_components, constructor) {
+    ASSERT_NO_THROW(Graph g2(10));
 }
 
-TEST(Pestreev_connectivity_components, constructor_2) {
-    ASSERT_NO_THROW(Graph g2(10));
+TEST(Pestreev_connectivity_components, no_vertexes) {
+    Graph g2(0);
+    int res = g2.countConectComps();
+    ASSERT_EQ(0, res);
 }
 
 TEST(Pestreev_connectivity_components, graph_with_one_vertex) {

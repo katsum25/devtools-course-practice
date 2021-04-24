@@ -9,7 +9,6 @@ class Graph {
     int** matrix;
     int n;
  public:
-    Graph();
     explicit Graph(int n_);
     ~Graph();
     int& element(int i, int j);
