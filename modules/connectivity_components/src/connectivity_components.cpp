@@ -2,19 +2,18 @@
 
 #include "include/connectivity_components.h"
 
-void Graph::create() {
+Graph::Graph(): n(0) {
     matrix = new int * [n];
     for (int g = 0; g < n; g++)
         matrix[g] = new int[n];
     used = new char[n];
 }
 
-Graph::Graph(): n(0) {
-    create();
-}
-
 Graph::Graph(int i): n(i) {
-    create();
+    matrix = new int * [n];
+    for (int g = 0; g < n; g++)
+        matrix[g] = new int[n];
+    used = new char[n];
 }
 
 Graph::~Graph() {

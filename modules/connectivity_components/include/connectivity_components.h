@@ -15,7 +15,6 @@ class Graph {
     int& element(int i, int j);
     void dfs(int s);
     int countConectComps();
-    void create();
 };
 
 #endif  // MODULES_CONNECTIVITY_COMPONENTS_INCLUDE_CONNECTIVITY_COMPONENTS_H_
