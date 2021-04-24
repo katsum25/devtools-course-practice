@@ -7,7 +7,7 @@
 #include "include/connectivity_components.h"
 
 TEST(Pestreev_connectivity_components, constructor_1) {
-    ASSERT_NO_THROW(Graph g2(0));
+    ASSERT_NO_THROW(Graph g2());
 }
 
 TEST(Pestreev_connectivity_components, constructor_2) {
