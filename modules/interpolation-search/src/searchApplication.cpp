@@ -1,12 +1,9 @@
 // Copyright 2021 Pestreev Daniil
 
-
 #include <string>
 #include <vector>
-
 #include "include/interpolation_search.h"
 #include "include/searchApplication.h"
-
 
 searchApplication::searchApplication() : message_("") {}
 
@@ -51,7 +48,6 @@ std::string searchApplication::operator()(int argc, const char** argv) {
     }
     std::vector<int> array;
     int key;
-    std::string arg_i;
     try {
         for (int i = 1; i < argc - 1; i++) {
             if (parseint(argv[i])) {

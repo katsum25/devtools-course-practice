@@ -12,9 +12,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 add_subdirectory(src)
 add_subdirectory(test)
 add_subdirectory(application)
-
 #############################################
-##### Testing
+##### Testing 
 #############################################
 
 include("CTestTests.txt")
