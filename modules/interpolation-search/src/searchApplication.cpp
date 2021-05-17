@@ -8,9 +8,8 @@
 searchApplication::searchApplication() : message_("") {}
 
 void searchApplication::help(const char* appname) {
-    message_ = std::string("This is a interpolation_search application.\n") +
+    message_ = "This is a interpolation_search application.\n" +
            "Please provide some integers to search.\nExample: \n" +
-
            " $ " + appname + " 0 1 2 0";
 }
 
