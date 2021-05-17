@@ -17,15 +17,16 @@ void searchApplication::help(const char* appname) {
 bool parseint(const char* arg) {
     std::string str = arg;
     int start = 0;
-    if (str.size() == 1) {
+    int str_size = str.size();
+    if (str_size == 1) {
         if (str[0] < '0' || str[0] > '9') {
             return false;
         }
     }
-    if (str[0] = '-') {
+    if (str[0] == '-') {
         start++;
     }
-    for (int i = start; i < str.size(); i++) {
+    for (int i = start; i < str_size; i++) {
         if (str[i] < '0' || str[i] > '9') {
             return false;
         }
