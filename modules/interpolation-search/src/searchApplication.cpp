@@ -10,7 +10,8 @@ searchApplication::searchApplication() : message_("") {}
 void searchApplication::help(const char* appname) {
     message_ = std::string("This is a interpolation_search application. ") +
             "Please provide a sorted integer array to search for.\n" +
-            "The last element of the array is the key that we are looking for. " +
+            "The last element of the array is the key " +
+            "that we are looking for. " +
             "Example: \n" + " $ " + appname + " 0 1 2 0";
 }
 
