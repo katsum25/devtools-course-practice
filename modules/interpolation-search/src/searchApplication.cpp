@@ -8,11 +8,10 @@
 searchApplication::searchApplication() : message_("") {}
 
 void searchApplication::help(const char* appname) {
-    message_ = std::string(message) +
-        "This is a interpolation_search application.\n\n" +
-        "Please provide arguments in the following format. Example:\n\n" +
+    return std::string("This is a interpolation_search application.\n") +
+           "Please provide some integers to search.\nExample: \n" +
 
-        "$ " + appname + "0 1 2 3 0 \n\n";
+           " $ " + appname + " 0 1 2 0";
 }
 
 
