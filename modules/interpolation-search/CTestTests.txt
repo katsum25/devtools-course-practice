@@ -30,6 +30,42 @@ set_tests_properties (${prefix}_can_locate_arrayСontainsDouble PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
+    NAME ${prefix}_array_contains_char
+    COMMAND ${APPLICATION}  -100 -70 a -55 -36 36 100 420 420
+)
+
+set_tests_properties (${prefix}_array_contains_char PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR! Not integer"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_arrayContainsString
+    COMMAND ${APPLICATION}  -100 -70 asdf -55 -36 36 100 420 420
+)
+
+set_tests_properties (${prefix}_arrayContainsString PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR! Not integer"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_arrayContainsOnlyMinus
+    COMMAND ${APPLICATION}  -100 -70 - -55 -36 36 100 420 420
+)
+
+set_tests_properties (${prefix}_arrayContainsOnlyMinus PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR! Not integer"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_key_is_not_integer
+    COMMAND ${APPLICATION}  -100 -70 -60 -55 -36 36 100 420 a
+)
+
+set_tests_properties (${prefix}_key_is_not_integer PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR! Not integer"
+    LABELS "${MODULE}")
+
+add_test(
     NAME ${prefix}_empty_array
     COMMAND ${APPLICATION}  0
 )
@@ -90,22 +126,4 @@ add_test(
 
 set_tests_properties (${prefix}_exist_far_right PROPERTIES
     PASS_REGULAR_EXPRESSION "7"
-    LABELS "${MODULE}")
-
-add_test(
-    NAME ${prefix}_array_contains_char
-    COMMAND ${APPLICATION}  -100 -70 a -55 -36 36 100 420 420
-)
-
-set_tests_properties (${prefix}_array_contains_char PROPERTIES
-    PASS_REGULAR_EXPRESSION "ERROR! Not integer"
-    LABELS "${MODULE}")
-
-add_test(
-    NAME ${prefix}_key_is_not_integer
-    COMMAND ${APPLICATION}  -100 -70 -60 -55 -36 36 100 420 a
-)
-
-set_tests_properties (${prefix}_key_is_not_integer PROPERTIES
-    PASS_REGULAR_EXPRESSION "ERROR! Not integer"
     LABELS "${MODULE}")
