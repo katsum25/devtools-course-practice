@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <vector>
 #include <limits>
-#include <utility>
 #include "include/interpolation_search.h"
 
 
