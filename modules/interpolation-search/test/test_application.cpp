@@ -20,7 +20,7 @@ TEST(InterpolationSearchApplication, arrayСontainsDouble) {
     ASSERT_EQ("ERROR! Not integer", actual);
 }
 
-TEST(InterpolationSearch, empty_array) {
+TEST(InterpolationSearchApplication, empty_array) {
     int argc = 2;
     std::vector<const char *> argv = {"app", "123"};
 
