@@ -69,8 +69,8 @@ std::string searchApplication::operator()(int argc, const char** argv) {
         return "ERROR! Not integer";
     }
 
-    int res_InterpSearch = InterpSearch::interpolation_search(array, key,
-        false);
+    int res_InterpSearch = InterpSearch::interpolation_search(array,
+        key, false);
 
     std::string result = std::to_string(res_InterpSearch);
 
