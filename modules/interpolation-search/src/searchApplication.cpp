@@ -15,7 +15,6 @@ void searchApplication::help(const char* appname) {
             "Example: \n" + " $ " + appname + " 0 1 2 0";
 }
 
-
 bool parseint(const char* arg) {
     std::string str = arg;
     int start = 0;
@@ -48,17 +47,18 @@ std::string searchApplication::operator()(int argc, const char** argv) {
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
     }
+
     std::vector<int> array;
     int key;
+
     try {
         for (int i = 1; i < argc - 1; i++) {
             if (parseint(argv[i])) {
                 int value_int = std::stoi(argv[i]);
                 array.push_back(value_int);
-            } else {  //  e = element
+            } else {
                 throw -1;
             }
-           //  array.push_back(e);
         }
         if (parseint(argv[argc - 1])) {
             key = std::stoi(argv[argc - 1]);
@@ -68,10 +68,11 @@ std::string searchApplication::operator()(int argc, const char** argv) {
     } catch (int e) {
         return "ERROR! Not integer";
     }
+
     int res_InterpSearch = InterpSearch::interpolation_search(array, key,
         false);
 
-    std::string result = "";
-    result += std::to_string(res_InterpSearch);
+    std::string result = std::to_string(res_InterpSearch);
+
     return result;
 }
