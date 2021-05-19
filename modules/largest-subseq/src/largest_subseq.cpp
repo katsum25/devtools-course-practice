@@ -5,12 +5,13 @@
 #include <algorithm>
 #include <string>
 
+
 Sequential::Sequential(std::vector <int> seq)
     :
     m_seq(seq) {
 }
 
-std::vector<int> Sequential::findLargSubseqNlogN(std::vector <int> fSec) {
+std::vector<int> Sequential::findLargSubseqNlogN(std::vector<int> fSec) {
     int n = fSec.size();
     std::vector<int> d(n+1), pos(n+1), prev(n);
     int length = 0;
@@ -85,12 +86,13 @@ std::vector<int> Sequential::findLargSubseqN2(std::vector <int> fSec) {
     return answer;
 }
 
-std::vector<int> Sequential::getLargSubseq(std::string name) {
-    std::vector<int> answer;
-    if (name == "NlogN") {
-        answer = findLargSubseqNlogN(Sequential::m_seq);
-    } else if (name == "N2") {
-        answer = findLargSubseqN2(Sequential::m_seq);
-    }
-    return answer;
+std::vector<int> Sequential::getLargSubseq(std::vector<int> m_seq) {
+    std::vector<int> ans1;
+    std::vector<int> ans2;
+    std::vector<int> res;
+    ans1 = findLargSubseqN2(m_seq);
+    ans2 = findLargSubseqNlogN(m_seq);
+    res.push_back(ans1.size());
+    res.push_back(ans2.size());
+    return res;
 }

@@ -29,7 +29,7 @@ std::string RomaNumber::RomaConvert(int n, int rank) {
 
 void RomaNumber::arabToRoma(int ar) {
     if (ar < 0 || ar > 3999)
-        throw "Wrong number";
+        throw std::string("Wrong number");
     arabic_ = ar;
     roma_ = "";
     for (int i = 1; (ar != 0 && i < 5); ++i) {
@@ -39,6 +39,8 @@ void RomaNumber::arabToRoma(int ar) {
 }
 
 void RomaNumber::romaToArab(const std::string& ro) {
+    if (!IsStringCorrect(ro))
+        throw std::string("Wrong string");
     int _ar = 0;
     int n = ro.length();
     for (int i = 0; i < n; ++i) {
@@ -78,7 +80,7 @@ RomaNumber::RomaNumber(int ar) {
 
 RomaNumber::RomaNumber(const std::string& ro) {
     if (!IsStringCorrect(ro))
-        throw "Wrong string";
+        throw std::string("Wrong string");
     else
         romaToArab(ro);
 }

@@ -17,7 +17,7 @@ class Sequential {
 
  public:
     explicit Sequential(std::vector <int> seq);
-    std::vector<int> getLargSubseq(std::string name);
+    std::vector<int> getLargSubseq(std::vector<int> m_seq);
 };
 
 #endif  // MODULES_LARGEST_SUBSEQ_INCLUDE_LARGEST_SUBSEQ_H_
