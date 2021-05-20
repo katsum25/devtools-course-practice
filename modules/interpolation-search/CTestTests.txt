@@ -93,6 +93,15 @@ set_tests_properties (${prefix}_can_not_find_in_an_array_of_size1 PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
+    NAME ${prefix}_array_not_sorted
+    COMMAND ${APPLICATION}  100 -70 0 55 -36 36 100 420 420
+)
+
+set_tests_properties (${prefix}_array_not_sorted PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR! Array is not sorted"
+    LABELS "${MODULE}")
+
+add_test(
     NAME ${prefix}_can_find_in_some_array
     COMMAND ${APPLICATION}  -10 -2 0 10 15 17 21 100 0
 )

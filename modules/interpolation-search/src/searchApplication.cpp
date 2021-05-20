@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "include/interpolation_search.h"
 #include "include/searchApplication.h"
 
@@ -57,15 +58,24 @@ std::string searchApplication::operator()(int argc, const char** argv) {
                 int value_int = std::stoi(argv[i]);
                 array.push_back(value_int);
             } else {
-                throw -1;
+                throw 2;
             }
         }
+
+        if (std::is_sorted(array.begin(), array.end()) == false) {
+            throw 1;
+        }
+
         if (parseint(argv[argc - 1])) {
             key = std::stoi(argv[argc - 1]);
         } else {
-            throw -1;
+            throw 2;
         }
     } catch (int e) {
+        switch (e) {
+            case 1: return "ERROR! Array is not sorted";
+            case 2: return "ERROR! Not integer";
+        }
         return "ERROR! Not integer";
     }
 
