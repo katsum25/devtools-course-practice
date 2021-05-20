@@ -76,7 +76,6 @@ std::string searchApplication::operator()(int argc, const char** argv) {
             case 1: return "ERROR! Array is not sorted";
             case 2: return "ERROR! Not integer";
         }
-        return "ERROR! Not integer";
     }
 
     int res_InterpSearch = InterpSearch::interpolation_search(array,
